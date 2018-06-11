@@ -11,6 +11,11 @@
 		B766319FB69AA63CF0B2FC29 /* Pods_BondChartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448BF82A4D86AAB9757069B9 /* Pods_BondChartTests.framework */; };
 		D80A281820CE7C6600F178DA /* BondRateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A281720CE7C6600F178DA /* BondRateAPI.swift */; };
 		D80A281A20CE7F6300F178DA /* BondRateAPIStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A281920CE7F6300F178DA /* BondRateAPIStub.swift */; };
+		D80A281D20CE9CD900F178DA /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A281C20CE9CD900F178DA /* ChartView.swift */; };
+		D80A281F20CE9DD800F178DA /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80A281E20CE9DD800F178DA /* ChartView.xib */; };
+		D80A282320CEA50500F178DA /* ChartTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A282220CEA50500F178DA /* ChartTabBar.swift */; };
+		D80A282820CEAEAD00F178DA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A282720CEAEAD00F178DA /* UIView+Extensions.swift */; };
+		D80A282B20CEB18A00F178DA /* DateInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A282A20CEB18A00F178DA /* DateInterval+Extensions.swift */; };
 		D86C06E520CE598D00EA0CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06E420CE598D00EA0CAB /* AppDelegate.swift */; };
 		D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06E620CE598D00EA0CAB /* ViewController.swift */; };
 		D86C06EA20CE598D00EA0CAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86C06E820CE598D00EA0CAB /* Main.storyboard */; };
@@ -39,6 +44,11 @@
 		947114572D790AA09C350305 /* Pods-BondChartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BondChartTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BondChartTests/Pods-BondChartTests.release.xcconfig"; sourceTree = "<group>"; };
 		D80A281720CE7C6600F178DA /* BondRateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondRateAPI.swift; sourceTree = "<group>"; };
 		D80A281920CE7F6300F178DA /* BondRateAPIStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondRateAPIStub.swift; sourceTree = "<group>"; };
+		D80A281C20CE9CD900F178DA /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		D80A281E20CE9DD800F178DA /* ChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		D80A282220CEA50500F178DA /* ChartTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTabBar.swift; sourceTree = "<group>"; };
+		D80A282720CEAEAD00F178DA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D80A282A20CEB18A00F178DA /* DateInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateInterval+Extensions.swift"; sourceTree = "<group>"; };
 		D86C06E120CE598D00EA0CAB /* BondChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86C06E420CE598D00EA0CAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D86C06E620CE598D00EA0CAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +111,65 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		D80A281B20CE9B8400F178DA /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				D80A282120CEA3B000F178DA /* TabBar */,
+				D80A282020CEA36500F178DA /* View */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		D80A282020CEA36500F178DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D80A281C20CE9CD900F178DA /* ChartView.swift */,
+				D80A281E20CE9DD800F178DA /* ChartView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D80A282120CEA3B000F178DA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D80A282220CEA50500F178DA /* ChartTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D80A282420CEAE7E00F178DA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D80A282520CEAE8900F178DA /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D80A282520CEAE8900F178DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D80A282920CEB17200F178DA /* DateInterval */,
+				D80A282620CEAE9500F178DA /* UIView */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D80A282620CEAE9500F178DA /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				D80A282720CEAEAD00F178DA /* UIView+Extensions.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		D80A282920CEB17200F178DA /* DateInterval */ = {
+			isa = PBXGroup;
+			children = (
+				D80A282A20CEB18A00F178DA /* DateInterval+Extensions.swift */,
+			);
+			path = DateInterval;
+			sourceTree = "<group>";
+		};
 		D86C06D820CE598D00EA0CAB = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +215,7 @@
 				D86C070C20CE5D6800EA0CAB /* Presentation */,
 				D86C070E20CE72F500EA0CAB /* Entities */,
 				D80A281620CE771600F178DA /* API */,
+				D80A282420CEAE7E00F178DA /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -186,6 +256,7 @@
 		D86C070C20CE5D6800EA0CAB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D80A281B20CE9B8400F178DA /* Chart */,
 				D86C06E620CE598D00EA0CAB /* ViewController.swift */,
 				D86C06E820CE598D00EA0CAB /* Main.storyboard */,
 				D86C06ED20CE598D00EA0CAB /* LaunchScreen.storyboard */,
@@ -293,6 +364,7 @@
 				D86C06EF20CE598D00EA0CAB /* LaunchScreen.storyboard in Resources */,
 				D86C06EC20CE598D00EA0CAB /* Assets.xcassets in Resources */,
 				D86C06EA20CE598D00EA0CAB /* Main.storyboard in Resources */,
+				D80A281F20CE9DD800F178DA /* ChartView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +479,11 @@
 				D86C071020CE738E00EA0CAB /* BondRate.swift in Sources */,
 				D80A281820CE7C6600F178DA /* BondRateAPI.swift in Sources */,
 				D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */,
+				D80A282320CEA50500F178DA /* ChartTabBar.swift in Sources */,
+				D80A282B20CEB18A00F178DA /* DateInterval+Extensions.swift in Sources */,
 				D86C06E520CE598D00EA0CAB /* AppDelegate.swift in Sources */,
+				D80A282820CEAEAD00F178DA /* UIView+Extensions.swift in Sources */,
+				D80A281D20CE9CD900F178DA /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

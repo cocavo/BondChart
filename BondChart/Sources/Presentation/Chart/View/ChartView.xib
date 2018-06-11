@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChartView" customModule="BondChart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igj-HN-Vsp">
+                    <rect key="frame" x="0.0" y="330" width="667" height="1"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="emZ-yT-dZt"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rJD-9g-lJg" customClass="ChartTabBar" customModule="BondChart" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="331" width="667" height="44"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rJD-9g-lJg" firstAttribute="top" secondItem="Igj-HN-Vsp" secondAttribute="bottom" id="JeG-Kd-061"/>
+                <constraint firstAttribute="bottom" secondItem="rJD-9g-lJg" secondAttribute="bottom" id="NQh-xV-zAH"/>
+                <constraint firstAttribute="bottom" secondItem="Igj-HN-Vsp" secondAttribute="bottom" constant="44" id="OQB-MK-2BS"/>
+                <constraint firstAttribute="trailing" secondItem="Igj-HN-Vsp" secondAttribute="trailing" id="QGG-iy-LID"/>
+                <constraint firstItem="rJD-9g-lJg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SCt-uB-SZB"/>
+                <constraint firstItem="Igj-HN-Vsp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bzW-B3-JUY"/>
+                <constraint firstAttribute="trailing" secondItem="rJD-9g-lJg" secondAttribute="trailing" id="veY-1U-mUB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tabbar" destination="rJD-9g-lJg" id="lie-dq-UHR"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

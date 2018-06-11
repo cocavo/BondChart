@@ -9,17 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private weak var chart: ChartView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupChart()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func setupChart() {
+        let chart: ChartView = ChartView.loadFromNib()!
+        view.addSubview(chart)
+        chart.fillParent()
+        chart.tabbar.tabs = [
+            "1W",
+            "1M",
+            "3M",
+            "6M",
+            "1Y",
+            "2Y"
+        ]
+        self.chart = chart
     }
-
-
 }
-

@@ -1,12 +1,17 @@
 PODS:
   - AFDateHelper (4.2.7)
+  - Charts (3.0.5):
+    - Charts/Core (= 3.0.5)
+  - Charts/Core (3.0.5)
 
 DEPENDENCIES:
   - AFDateHelper (~> 4.2.2)
+  - Charts (~> 3.0.0)
 
 SPEC CHECKSUMS:
   AFDateHelper: 4ad66fb19503041fbba8a3018cb7ef9c71b2ff88
+  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
 
-PODFILE CHECKSUM: 56bbe23b5cc0282f54f2c3dfb072d6699ef7c5b5
+PODFILE CHECKSUM: 2970b816b47592ee0d92470f0b2d7b692a088858
 
 COCOAPODS: 1.2.1

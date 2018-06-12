@@ -24,19 +24,28 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rJD-9g-lJg" customClass="ChartTabBar" customModule="BondChart" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="331" width="667" height="44"/>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-Za-F6a" customClass="LineChartView" customModule="Charts">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="330"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="HAc-Za-F6a" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ffs-ll-3oN"/>
                 <constraint firstItem="rJD-9g-lJg" firstAttribute="top" secondItem="Igj-HN-Vsp" secondAttribute="bottom" id="JeG-Kd-061"/>
                 <constraint firstAttribute="bottom" secondItem="rJD-9g-lJg" secondAttribute="bottom" id="NQh-xV-zAH"/>
                 <constraint firstAttribute="bottom" secondItem="Igj-HN-Vsp" secondAttribute="bottom" constant="44" id="OQB-MK-2BS"/>
+                <constraint firstItem="HAc-Za-F6a" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Omv-Q1-QY2"/>
                 <constraint firstAttribute="trailing" secondItem="Igj-HN-Vsp" secondAttribute="trailing" id="QGG-iy-LID"/>
                 <constraint firstItem="rJD-9g-lJg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SCt-uB-SZB"/>
+                <constraint firstAttribute="trailing" secondItem="HAc-Za-F6a" secondAttribute="trailing" id="Sk7-er-fj0"/>
+                <constraint firstItem="Igj-HN-Vsp" firstAttribute="top" secondItem="HAc-Za-F6a" secondAttribute="bottom" id="Spu-H4-qF4"/>
                 <constraint firstItem="Igj-HN-Vsp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bzW-B3-JUY"/>
                 <constraint firstAttribute="trailing" secondItem="rJD-9g-lJg" secondAttribute="trailing" id="veY-1U-mUB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="lineChartView" destination="HAc-Za-F6a" id="HIP-EI-RMW"/>
                 <outlet property="tabbar" destination="rJD-9g-lJg" id="lie-dq-UHR"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>

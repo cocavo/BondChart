@@ -22,6 +22,9 @@
 		D86C06EC20CE598D00EA0CAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86C06EB20CE598D00EA0CAB /* Assets.xcassets */; };
 		D86C06EF20CE598D00EA0CAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86C06ED20CE598D00EA0CAB /* LaunchScreen.storyboard */; };
 		D86C071020CE738E00EA0CAB /* BondRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C070F20CE738E00EA0CAB /* BondRate.swift */; };
+		D8D2BC6120CFF2FB00681932 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2BC6020CFF2FB00681932 /* UIColor+Extensions.swift */; };
+		D8D2BC6420CFF7FB00681932 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2BC6320CFF7FB00681932 /* UIFont+Extensions.swift */; };
+		D8D2BC6720CFFA1D00681932 /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2BC6620CFFA1D00681932 /* DateValueFormatter.swift */; };
 		D8DDD7F420CFCE100070E769 /* TimeIntervalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDD7F320CFCE100070E769 /* TimeIntervalFormatter.swift */; };
 		D8DDD7F920CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDD7F820CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift */; };
 		D8DDD7FC20CFDD680070E769 /* TimeIntervalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDD7F320CFCE100070E769 /* TimeIntervalFormatter.swift */; };
@@ -61,6 +64,9 @@
 		D86C06F520CE598D00EA0CAB /* BondChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BondChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86C06FB20CE598D00EA0CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86C070F20CE738E00EA0CAB /* BondRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondRate.swift; sourceTree = "<group>"; };
+		D8D2BC6020CFF2FB00681932 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		D8D2BC6320CFF7FB00681932 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		D8D2BC6620CFFA1D00681932 /* DateValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
 		D8DDD7F320CFCE100070E769 /* TimeIntervalFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalFormatter.swift; sourceTree = "<group>"; };
 		D8DDD7F720CFDCA00070E769 /* BondChartTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BondChartTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8DDD7F820CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLetterFormatTimeIntervalFormatterTestCase.swift; sourceTree = "<group>"; };
@@ -153,6 +159,8 @@
 		D80A282520CEAE8900F178DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D8D2BC6220CFF7E800681932 /* UIFont */,
+				D8D2BC5F20CFF2E700681932 /* UIColor */,
 				D80A282920CEB17200F178DA /* DateInterval */,
 				D80A282620CEAE9500F178DA /* UIView */,
 			);
@@ -277,9 +285,34 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		D8D2BC5F20CFF2E700681932 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				D8D2BC6020CFF2FB00681932 /* UIColor+Extensions.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		D8D2BC6220CFF7E800681932 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				D8D2BC6320CFF7FB00681932 /* UIFont+Extensions.swift */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		D8D2BC6520CFFA0800681932 /* DateValue */ = {
+			isa = PBXGroup;
+			children = (
+				D8D2BC6620CFFA1D00681932 /* DateValueFormatter.swift */,
+			);
+			path = DateValue;
+			sourceTree = "<group>";
+		};
 		D8DDD7F120CFCD7D0070E769 /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
+				D8D2BC6520CFFA0800681932 /* DateValue */,
 				D8DDD7F220CFCDF60070E769 /* TimeInterval */,
 			);
 			path = Formatters;
@@ -532,12 +565,15 @@
 				D80A281A20CE7F6300F178DA /* BondRateAPIStub.swift in Sources */,
 				D86C071020CE738E00EA0CAB /* BondRate.swift in Sources */,
 				D80A281820CE7C6600F178DA /* BondRateAPI.swift in Sources */,
+				D8D2BC6720CFFA1D00681932 /* DateValueFormatter.swift in Sources */,
 				D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */,
 				D80A282320CEA50500F178DA /* ChartTabBar.swift in Sources */,
 				D80A282B20CEB18A00F178DA /* DateInterval+Extensions.swift in Sources */,
 				D8DDD7F420CFCE100070E769 /* TimeIntervalFormatter.swift in Sources */,
 				D86C06E520CE598D00EA0CAB /* AppDelegate.swift in Sources */,
+				D8D2BC6120CFF2FB00681932 /* UIColor+Extensions.swift in Sources */,
 				D80A282820CEAEAD00F178DA /* UIView+Extensions.swift in Sources */,
+				D8D2BC6420CFF7FB00681932 /* UIFont+Extensions.swift in Sources */,
 				D80A281D20CE9CD900F178DA /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

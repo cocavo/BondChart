@@ -13,6 +13,10 @@ final class ChartTabBar: UIStackView {
     private var buttons: [UIButton] = []
 
     @objc private func selectTab(_ sender: UIButton) {
+        guard !sender.isSelected else {
+            return
+        }
+
         deselectAll()
         sender.isSelected = true
         if let idx = buttons.index(of: sender) {
@@ -47,8 +51,8 @@ private extension UIButton {
         let bt = UIButton(frame: .zero)
         bt.setTitle(title, for: .normal)
         bt.setTitleColor(.black, for: .normal)
-        bt.setTitleColor(.blue, for: .selected)
-        bt.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        bt.setTitleColor(UIColor(rgb: 0x6490BE), for: .selected)
+        bt.titleLabel?.font = .chartLabelFont
         return bt
     }
 }

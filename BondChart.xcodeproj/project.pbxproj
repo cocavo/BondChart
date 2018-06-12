@@ -21,8 +21,10 @@
 		D86C06EA20CE598D00EA0CAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86C06E820CE598D00EA0CAB /* Main.storyboard */; };
 		D86C06EC20CE598D00EA0CAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86C06EB20CE598D00EA0CAB /* Assets.xcassets */; };
 		D86C06EF20CE598D00EA0CAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86C06ED20CE598D00EA0CAB /* LaunchScreen.storyboard */; };
-		D86C06FA20CE598D00EA0CAB /* BondChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06F920CE598D00EA0CAB /* BondChartTests.swift */; };
 		D86C071020CE738E00EA0CAB /* BondRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C070F20CE738E00EA0CAB /* BondRate.swift */; };
+		D8DDD7F420CFCE100070E769 /* TimeIntervalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDD7F320CFCE100070E769 /* TimeIntervalFormatter.swift */; };
+		D8DDD7F920CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDD7F820CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift */; };
+		D8DDD7FC20CFDD680070E769 /* TimeIntervalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDD7F320CFCE100070E769 /* TimeIntervalFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +59,11 @@
 		D86C06EE20CE598D00EA0CAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D86C06F020CE598D00EA0CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86C06F520CE598D00EA0CAB /* BondChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BondChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D86C06F920CE598D00EA0CAB /* BondChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondChartTests.swift; sourceTree = "<group>"; };
 		D86C06FB20CE598D00EA0CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86C070F20CE738E00EA0CAB /* BondRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondRate.swift; sourceTree = "<group>"; };
+		D8DDD7F320CFCE100070E769 /* TimeIntervalFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalFormatter.swift; sourceTree = "<group>"; };
+		D8DDD7F720CFDCA00070E769 /* BondChartTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BondChartTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8DDD7F820CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLetterFormatTimeIntervalFormatterTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				D80A282520CEAE8900F178DA /* Extensions */,
+				D8DDD7F120CFCD7D0070E769 /* Formatters */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -202,8 +207,8 @@
 		D86C06F820CE598D00EA0CAB /* BondChartTests */ = {
 			isa = PBXGroup;
 			children = (
-				D86C06F920CE598D00EA0CAB /* BondChartTests.swift */,
-				D86C06FB20CE598D00EA0CAB /* Info.plist */,
+				D8DDD7FB20CFDCD10070E769 /* TestCases */,
+				D8DDD7FA20CFDCC10070E769 /* Resources */,
 			);
 			path = BondChartTests;
 			sourceTree = "<group>";
@@ -272,6 +277,55 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		D8DDD7F120CFCD7D0070E769 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDD7F220CFCDF60070E769 /* TimeInterval */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		D8DDD7F220CFCDF60070E769 /* TimeInterval */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDD7F320CFCE100070E769 /* TimeIntervalFormatter.swift */,
+			);
+			path = TimeInterval;
+			sourceTree = "<group>";
+		};
+		D8DDD7F520CFDC400070E769 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDD7F620CFDC5A0070E769 /* Formatters */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D8DDD7F620CFDC5A0070E769 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDD7F820CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		D8DDD7FA20CFDCC10070E769 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDD7F720CFDCA00070E769 /* BondChartTests-Bridging-Header.h */,
+				D86C06FB20CE598D00EA0CAB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8DDD7FB20CFDCD10070E769 /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDD7F520CFDC400070E769 /* Utils */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,8 +386,8 @@
 					};
 					D86C06F420CE598D00EA0CAB = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = D86C06E020CE598D00EA0CAB;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -481,6 +535,7 @@
 				D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */,
 				D80A282320CEA50500F178DA /* ChartTabBar.swift in Sources */,
 				D80A282B20CEB18A00F178DA /* DateInterval+Extensions.swift in Sources */,
+				D8DDD7F420CFCE100070E769 /* TimeIntervalFormatter.swift in Sources */,
 				D86C06E520CE598D00EA0CAB /* AppDelegate.swift in Sources */,
 				D80A282820CEAEAD00F178DA /* UIView+Extensions.swift in Sources */,
 				D80A281D20CE9CD900F178DA /* ChartView.swift in Sources */,
@@ -491,7 +546,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86C06FA20CE598D00EA0CAB /* BondChartTests.swift in Sources */,
+				D8DDD7FC20CFDD680070E769 /* TimeIntervalFormatter.swift in Sources */,
+				D8DDD7F920CFDCA10070E769 /* OneLetterFormatTimeIntervalFormatterTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,15 +729,18 @@
 			baseConfigurationReference = 85FC718B004D789D71FA7D92 /* Pods-BondChartTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BondChartTests/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = BondChartTests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuhtamanov.BondChartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BondChartTests/Resources/BondChartTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BondChart.app/BondChart";
 			};
 			name = Debug;
 		};
@@ -690,15 +749,17 @@
 			baseConfigurationReference = 947114572D790AA09C350305 /* Pods-BondChartTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BondChartTests/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = BondChartTests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuhtamanov.BondChartTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BondChartTests/Resources/BondChartTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BondChart.app/BondChart";
 			};
 			name = Release;
 		};

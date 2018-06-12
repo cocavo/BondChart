@@ -8,8 +8,6 @@
 
 import Foundation
 
-let day: TimeInterval = 24*3600
-
 final class BondRateAPIStub: BondRateAPI {
     private let isin: ISIN
     private let workingQueue: DispatchQueue
@@ -24,7 +22,7 @@ final class BondRateAPIStub: BondRateAPI {
             let rates = stride(
                 from: interval.start.timeIntervalSince1970,
                 to: interval.end.timeIntervalSince1970,
-                by: day
+                by: .day
             )
                 .map { BondRate.stub(date: Date(timeIntervalSince1970: $0)) }
 

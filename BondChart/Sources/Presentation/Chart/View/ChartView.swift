@@ -9,7 +9,13 @@
 import UIKit
 
 final class ChartView: UIView {
-    @IBOutlet weak var tabbar: ChartTabBar!
+    @IBOutlet private weak var tabbar: ChartTabBar!
 
-    
+    var timeIntervalFormatter: TimeIntervalFormatting!
+
+    var dateIntervals: [DateInterval] = [] {
+        didSet {
+            tabbar.tabs = dateIntervals.map { timeIntervalFormatter.string(for: $0.duration) }
+        }
+    }
 }

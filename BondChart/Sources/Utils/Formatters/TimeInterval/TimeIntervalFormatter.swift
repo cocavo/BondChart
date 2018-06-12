@@ -30,6 +30,6 @@ final class OneLetterFormatTimeIntervalFormatter: TimeIntervalFormatting {
 extension TimeInterval {
     static let day: TimeInterval = 24 * 3600
     static let week: TimeInterval = 7 * day
-    static let month: TimeInterval = 31 * day
+    static let month: TimeInterval = 30 * day
     static let year: TimeInterval = 365 * day
 }

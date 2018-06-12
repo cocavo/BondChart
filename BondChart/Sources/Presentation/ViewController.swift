@@ -19,15 +19,16 @@ class ViewController: UIViewController {
 
     private func setupChart() {
         let chart: ChartView = ChartView.loadFromNib()!
+        chart.timeIntervalFormatter = OneLetterFormatTimeIntervalFormatter()
         view.addSubview(chart)
         chart.fillParent()
-        chart.tabbar.tabs = [
-            "1W",
-            "1M",
-            "3M",
-            "6M",
-            "1Y",
-            "2Y"
+        chart.dateIntervals = [
+            .week(),
+            .month(),
+            .month(3),
+            .month(6),
+            .year(),
+            .year(2)
         ]
         self.chart = chart
     }

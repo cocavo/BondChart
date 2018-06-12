@@ -10,15 +10,15 @@ import Foundation
 import AFDateHelper
 
 extension DateInterval {
-    static func week(_ count: Int) -> DateInterval {
+    static func week(_ count: Int = 1) -> DateInterval {
         return interval(component: .week, offset: -count)
     }
 
-    static func month(_ count: Int) -> DateInterval {
+    static func month(_ count: Int = 1) -> DateInterval {
         return interval(component: .month, offset: -count)
     }
 
-    static func year(_ count: Int) -> DateInterval {
+    static func year(_ count: Int = 1) -> DateInterval {
         return interval(component: .year, offset: -count)
     }
 }

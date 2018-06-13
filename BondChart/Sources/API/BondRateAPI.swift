@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias ISIN = Int
+typealias ISIN = String
 
 enum Result<T> {
     case success(T)

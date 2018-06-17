@@ -10,11 +10,16 @@ import UIKit
 import Charts
 
 final class ChartView: UIView {
+    struct DataEntry {
+        let x: Double
+        let y: Double
+    }
+
     @IBOutlet private weak var tabbar: ChartTabBar!
     @IBOutlet private weak var lineChartView: LineChartView!
     
     var timeIntervalFormatter: TimeIntervalFormatting!
-    var API: BondRateAPI!
+    var dataSource: ChartDataSource!
 
     var dateIntervals: [DateInterval] = [] {
         didSet {
@@ -60,34 +65,29 @@ private extension ChartView {
     }
 
     func fetchData(dateInterval: DateInterval) {
-        API.getBondRates(interval: dateInterval) { [weak self] (result) in
+        let config = ChartConfig(
+            displayMode: .price,
+            dateInterval: dateInterval
+        )
+        dataSource.fetchData(for: config) { [weak self] (result) in
             guard let this = self else { return }
             switch result {
-            case let .success(rates):
-                this.render(rates: rates)
+            case let .success(entries):
+                this.render(entries: entries)
             case let .failure(error):
                 print("Could not fetch bond rates \(error)")
             }
         }
     }
 
-    func render(rates: [BondRate]) {
-        let entries = rates.map { ChartDataEntry.price($0) }
-        let dataSet = LineChartDataSet(values: entries, label: nil)
-        dataSet.drawCirclesEnabled = false
-        dataSet.lineWidth = 3
-        dataSet.setColor(UIColor(rgb: 0xEF798D))
-        dataSet.valueFont = .chartLabelFont
-        dataSet.valueTextColor = .black
+    func render(entries: [DataEntry]) {
+        let dataSet = LineChartDataSet.bondDataSet(entries: entries)
         lineChartView.data = LineChartData(dataSet: dataSet)
     }
 }
 
-private extension ChartDataEntry {
-    class func price(_ rate: BondRate) -> ChartDataEntry {
-        return ChartDataEntry(
-            x: rate.date.timeIntervalSince1970,
-            y: rate.price
-        )
+extension ChartView.DataEntry {
+    var chartDataEntry: ChartDataEntry {
+        return ChartDataEntry(x: x, y: y)
     }
 }

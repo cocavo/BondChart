@@ -16,6 +16,12 @@
 		D80A282320CEA50500F178DA /* ChartTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A282220CEA50500F178DA /* ChartTabBar.swift */; };
 		D80A282820CEAEAD00F178DA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A282720CEAEAD00F178DA /* UIView+Extensions.swift */; };
 		D80A282B20CEB18A00F178DA /* DateInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A282A20CEB18A00F178DA /* DateInterval+Extensions.swift */; };
+		D86367F120D6A3E200787120 /* ChartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86367F020D6A3E200787120 /* ChartDataSource.swift */; };
+		D86367F620D6AA1D00787120 /* ChartDataEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86367F520D6AA1D00787120 /* ChartDataEntryBuilder.swift */; };
+		D86367F820D6AD4C00787120 /* PriceDataEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86367F720D6AD4C00787120 /* PriceDataEntryBuilder.swift */; };
+		D86367FA20D6AD5C00787120 /* YieldDataEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86367F920D6AD5C00787120 /* YieldDataEntryBuilder.swift */; };
+		D86367FC20D6ADD900787120 /* ChartDataEntryBuilderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86367FB20D6ADD900787120 /* ChartDataEntryBuilderFactory.swift */; };
+		D86367FF20D6B0B400787120 /* LineChartDataSet+Bonds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86367FE20D6B0B400787120 /* LineChartDataSet+Bonds.swift */; };
 		D86C06E520CE598D00EA0CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06E420CE598D00EA0CAB /* AppDelegate.swift */; };
 		D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06E620CE598D00EA0CAB /* ViewController.swift */; };
 		D86C06EA20CE598D00EA0CAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86C06E820CE598D00EA0CAB /* Main.storyboard */; };
@@ -54,6 +60,12 @@
 		D80A282220CEA50500F178DA /* ChartTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTabBar.swift; sourceTree = "<group>"; };
 		D80A282720CEAEAD00F178DA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		D80A282A20CEB18A00F178DA /* DateInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateInterval+Extensions.swift"; sourceTree = "<group>"; };
+		D86367F020D6A3E200787120 /* ChartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataSource.swift; sourceTree = "<group>"; };
+		D86367F520D6AA1D00787120 /* ChartDataEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntryBuilder.swift; sourceTree = "<group>"; };
+		D86367F720D6AD4C00787120 /* PriceDataEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceDataEntryBuilder.swift; sourceTree = "<group>"; };
+		D86367F920D6AD5C00787120 /* YieldDataEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YieldDataEntryBuilder.swift; sourceTree = "<group>"; };
+		D86367FB20D6ADD900787120 /* ChartDataEntryBuilderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataEntryBuilderFactory.swift; sourceTree = "<group>"; };
+		D86367FE20D6B0B400787120 /* LineChartDataSet+Bonds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineChartDataSet+Bonds.swift"; sourceTree = "<group>"; };
 		D86C06E120CE598D00EA0CAB /* BondChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86C06E420CE598D00EA0CAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D86C06E620CE598D00EA0CAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +127,7 @@
 		D80A281620CE771600F178DA /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D86C070F20CE738E00EA0CAB /* BondRate.swift */,
 				D80A281720CE7C6600F178DA /* BondRateAPI.swift */,
 				D80A281920CE7F6300F178DA /* BondRateAPIStub.swift */,
 			);
@@ -124,8 +137,8 @@
 		D80A281B20CE9B8400F178DA /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				D80A282120CEA3B000F178DA /* TabBar */,
-				D80A282020CEA36500F178DA /* View */,
+				D86367F220D6A97000787120 /* Presentation */,
+				D8ED1FD020D16738002B6571 /* Data */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -183,6 +196,43 @@
 			path = DateInterval;
 			sourceTree = "<group>";
 		};
+		D86367F220D6A97000787120 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D86367FD20D6B07700787120 /* Extensions */,
+				D80A282020CEA36500F178DA /* View */,
+				D80A282120CEA3B000F178DA /* TabBar */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D86367F320D6A99600787120 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D86367F020D6A3E200787120 /* ChartDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D86367F420D6A9F400787120 /* EntryBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				D86367F520D6AA1D00787120 /* ChartDataEntryBuilder.swift */,
+				D86367F720D6AD4C00787120 /* PriceDataEntryBuilder.swift */,
+				D86367F920D6AD5C00787120 /* YieldDataEntryBuilder.swift */,
+				D86367FB20D6ADD900787120 /* ChartDataEntryBuilderFactory.swift */,
+			);
+			path = EntryBuilder;
+			sourceTree = "<group>";
+		};
+		D86367FD20D6B07700787120 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D86367FE20D6B0B400787120 /* LineChartDataSet+Bonds.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D86C06D820CE598D00EA0CAB = {
 			isa = PBXGroup;
 			children = (
@@ -225,9 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				D86C070B20CE5D5D00EA0CAB /* App */,
+				D80A281B20CE9B8400F178DA /* Chart */,
 				D86C070C20CE5D6800EA0CAB /* Presentation */,
-				D86C070E20CE72F500EA0CAB /* Entities */,
-				D80A281620CE771600F178DA /* API */,
 				D80A282420CEAE7E00F178DA /* Utils */,
 			);
 			path = Sources;
@@ -269,20 +318,11 @@
 		D86C070C20CE5D6800EA0CAB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D80A281B20CE9B8400F178DA /* Chart */,
 				D86C06E620CE598D00EA0CAB /* ViewController.swift */,
 				D86C06E820CE598D00EA0CAB /* Main.storyboard */,
 				D86C06ED20CE598D00EA0CAB /* LaunchScreen.storyboard */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		D86C070E20CE72F500EA0CAB /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				D86C070F20CE738E00EA0CAB /* BondRate.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		D8D2BC5F20CFF2E700681932 /* UIColor */ = {
@@ -357,6 +397,16 @@
 				D8DDD7F520CFDC400070E769 /* Utils */,
 			);
 			path = TestCases;
+			sourceTree = "<group>";
+		};
+		D8ED1FD020D16738002B6571 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D80A281620CE771600F178DA /* API */,
+				D86367F320D6A99600787120 /* DataSource */,
+				D86367F420D6A9F400787120 /* EntryBuilder */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,14 +616,20 @@
 				D86C071020CE738E00EA0CAB /* BondRate.swift in Sources */,
 				D80A281820CE7C6600F178DA /* BondRateAPI.swift in Sources */,
 				D8D2BC6720CFFA1D00681932 /* DateValueFormatter.swift in Sources */,
+				D86367FC20D6ADD900787120 /* ChartDataEntryBuilderFactory.swift in Sources */,
+				D86367F120D6A3E200787120 /* ChartDataSource.swift in Sources */,
 				D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */,
 				D80A282320CEA50500F178DA /* ChartTabBar.swift in Sources */,
 				D80A282B20CEB18A00F178DA /* DateInterval+Extensions.swift in Sources */,
 				D8DDD7F420CFCE100070E769 /* TimeIntervalFormatter.swift in Sources */,
 				D86C06E520CE598D00EA0CAB /* AppDelegate.swift in Sources */,
+				D86367FF20D6B0B400787120 /* LineChartDataSet+Bonds.swift in Sources */,
+				D86367F620D6AA1D00787120 /* ChartDataEntryBuilder.swift in Sources */,
 				D8D2BC6120CFF2FB00681932 /* UIColor+Extensions.swift in Sources */,
+				D86367F820D6AD4C00787120 /* PriceDataEntryBuilder.swift in Sources */,
 				D80A282820CEAEAD00F178DA /* UIView+Extensions.swift in Sources */,
 				D8D2BC6420CFF7FB00681932 /* UIFont+Extensions.swift in Sources */,
+				D86367FA20D6AD5C00787120 /* YieldDataEntryBuilder.swift in Sources */,
 				D80A281D20CE9CD900F178DA /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

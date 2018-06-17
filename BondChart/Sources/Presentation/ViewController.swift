@@ -9,9 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private weak var chart: ChartView!
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChart()
@@ -19,21 +16,25 @@ class ViewController: UIViewController {
 
     private func setupChart() {
         let chart: ChartView = ChartView.loadFromNib()!
-        chart.timeIntervalFormatter = OneLetterFormatTimeIntervalFormatter()
-        chart.dataSource = ChartDataSource(
+        let dataSource = ChartDataSource(
             API: BondRateAPIStub(isin: "123456789012"),
             dataEntryBuilderFactory: ChartDataEntryBuilderFactory()
         )
+        let vm = ChartViewModel(
+            displayModes: [.price, .yield],
+            dateIntervals: [
+                .week(),
+                .month(),
+                .month(3),
+                .month(6),
+                .year(),
+                .year(2)
+            ],
+            timeIntervalFormatter: OneLetterFormatTimeIntervalFormatter(),
+            dataSource: dataSource
+        )
+        chart.viewModel = vm
         view.addSubview(chart)
         chart.fillParent()
-        chart.dateIntervals = [
-            .week(),
-            .month(),
-            .month(3),
-            .month(6),
-            .year(),
-            .year(2)
-        ]
-        self.chart = chart
     }
 }

@@ -8,14 +8,10 @@
 
 import Foundation
 
-enum BondRateDisplayMode {
-    case price, yield
-}
-
 typealias ChartConfig = (displayMode: BondRateDisplayMode, dateInterval: DateInterval)
 
 final class ChartDataSource {
-    typealias Completion = (Result<[ChartView.DataEntry]>) -> Void
+    typealias Completion = (Result<[DataEntry]>) -> Void
 
     private let API: BondRateAPI
     private let dataEntryBuilderFactory: ChartDataEntryBuilderFactory

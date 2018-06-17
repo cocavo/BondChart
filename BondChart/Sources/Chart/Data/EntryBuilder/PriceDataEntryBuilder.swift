@@ -9,9 +9,9 @@
 import Foundation
 
 final class PriceDataEntryBuilder: ChartDataEntryBuilding {
-    func entries(for rates: [BondRate]) -> [ChartView.DataEntry] {
+    func entries(for rates: [BondRate]) -> [DataEntry] {
         return rates.map {
-            ChartView.DataEntry(
+            DataEntry(
                 x: $0.date.timeIntervalSince1970,
                 y: $0.price
             )

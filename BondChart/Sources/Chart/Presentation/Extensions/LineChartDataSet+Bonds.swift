@@ -9,7 +9,7 @@
 import Charts
 
 extension LineChartDataSet {
-    static func bondDataSet(entries: [ChartView.DataEntry]) -> LineChartDataSet {
+    static func bondDataSet(entries: [DataEntry]) -> LineChartDataSet {
         let dataSet = LineChartDataSet(values: entries.map {$0.chartDataEntry}, label: nil)
         dataSet.drawCirclesEnabled = false
         dataSet.lineWidth = 3
@@ -17,5 +17,11 @@ extension LineChartDataSet {
         dataSet.valueFont = .chartLabelFont
         dataSet.valueTextColor = .black
         return dataSet
+    }
+}
+
+extension DataEntry {
+    var chartDataEntry: ChartDataEntry {
+        return ChartDataEntry(x: x, y: y)
     }
 }

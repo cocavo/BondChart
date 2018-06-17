@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ChartDataEntryBuilding {
-    func entries(for rates: [BondRate]) -> [ChartView.DataEntry]
+    func entries(for rates: [BondRate]) -> [DataEntry]
 }

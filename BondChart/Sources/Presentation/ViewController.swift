@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     private func setupChart() {
         let chart: ChartView = ChartView.loadFromNib()!
         chart.timeIntervalFormatter = OneLetterFormatTimeIntervalFormatter()
-        chart.API = BondRateAPIStub(isin: 123456789012)
+        chart.API = BondRateAPIStub(isin: "123456789012")
         view.addSubview(chart)
         chart.fillParent()
         chart.dateIntervals = [

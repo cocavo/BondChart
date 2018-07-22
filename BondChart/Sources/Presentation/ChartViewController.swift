@@ -59,6 +59,11 @@ private extension ChartViewController {
         displayModes.forEach {
             sheet.addAction(action(for: $0))
         }
+        let cancel = UIAlertAction(
+            title: "Cancel",
+            style: .cancel
+        )
+        sheet.addAction(cancel)
         present(
             sheet,
             animated: true

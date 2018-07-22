@@ -9,19 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    private var chartViewModel: ChartViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupChartViewModel()
         setupChart()
     }
 
     private func setupChart() {
         let chart: ChartView = ChartView.loadFromNib()!
+        chart.viewModel = chartViewModel
+        chart.fill(container: view)
+        chartViewModel.fetchData()
+    }
+
+    private func setupChartViewModel() {
         let dataSource = ChartDataSource(
             API: BondRateAPIStub(isin: "123456789012"),
             dataEntryBuilderFactory: ChartDataEntryBuilderFactory()
         )
-        let vm = ChartViewModel(
-            displayModes: [.price, .yield],
+        let displayModes: [BondRateDisplayMode] = [.price, .yield]
+        chartViewModel = ChartViewModel(
+            displayModes: displayModes,
             dateIntervals: [
                 .week(),
                 .month(),
@@ -33,7 +43,34 @@ class ViewController: UIViewController {
             timeIntervalFormatter: OneLetterFormatTimeIntervalFormatter(),
             dataSource: dataSource
         )
-        chart.viewModel = vm
-        chart.fill(container: view)
+        chartViewModel.onChangeDisplayMode = { [unowned self] in
+            self.showActionSheet(for: displayModes)
+        }
+    }
+}
+
+private extension ViewController {
+    func showActionSheet(for displayModes: [BondRateDisplayMode]) {
+        let sheet = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        displayModes.forEach {
+            sheet.addAction(action(for: $0))
+        }
+        present(
+            sheet,
+            animated: true
+        )
+    }
+
+    func action(for displayMode: BondRateDisplayMode) -> UIAlertAction {
+        return UIAlertAction(
+            title: displayMode.description,
+            style: .default,
+            handler: { [unowned self] (_) in
+                self.chartViewModel.currentDisplayMode = displayMode
+        })
     }
 }

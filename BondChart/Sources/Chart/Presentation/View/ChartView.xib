@@ -28,6 +28,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="667" height="330"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-EV-fQN">
+                    <rect key="frame" x="32" y="32" width="74" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="CoJ-5o-LgV"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="PRICE" image="arrow_down_icon">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="changeDisplayMode:" destination="iN0-l3-epB" eventType="touchUpInside" id="T1u-oJ-aqB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -41,14 +55,20 @@
                 <constraint firstAttribute="trailing" secondItem="HAc-Za-F6a" secondAttribute="trailing" id="Sk7-er-fj0"/>
                 <constraint firstItem="Igj-HN-Vsp" firstAttribute="top" secondItem="HAc-Za-F6a" secondAttribute="bottom" id="Spu-H4-qF4"/>
                 <constraint firstItem="Igj-HN-Vsp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bzW-B3-JUY"/>
+                <constraint firstItem="5wj-EV-fQN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="gX6-zi-Sru"/>
+                <constraint firstItem="5wj-EV-fQN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="mdV-TC-lUH"/>
                 <constraint firstAttribute="trailing" secondItem="rJD-9g-lJg" secondAttribute="trailing" id="veY-1U-mUB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="displayModeButton" destination="5wj-EV-fQN" id="v9F-sR-sfX"/>
                 <outlet property="lineChartView" destination="HAc-Za-F6a" id="HIP-EI-RMW"/>
                 <outlet property="tabbar" destination="rJD-9g-lJg" id="lie-dq-UHR"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrow_down_icon" width="32" height="32"/>
+    </resources>
 </document>

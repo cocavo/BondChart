@@ -16,8 +16,8 @@ struct DataEntry {
 protocol ChartDisplaying: class {
     func showSpinner()
     func hideSpinner()
-    func render(entries: [DataEntry])
+    func render(entries: [DataEntry], displayMode: BondRateDisplayMode)
     func render(error: Error)
-    var onChangeDisplayMode: ((String) -> Void)? { get set }
+    var onChangeDisplayMode: (() -> Void)? { get set }
     var onSelectTab: ((Int) -> Void)? { get set }
 }

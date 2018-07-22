@@ -25,15 +25,56 @@ final class ChartViewModel {
         }
     }
 
+    var onChangeDisplayMode: (() -> Void)?
+
+    var currentDisplayMode: BondRateDisplayMode {
+        didSet {
+            if currentDisplayMode != oldValue {
+                fetchData()
+            }
+        }
+    }
+
+    var currentDateInterval: DateInterval {
+        didSet {
+            if currentDateInterval != oldValue {
+                fetchData()
+            }
+        }
+    }
+
     init(displayModes: [BondRateDisplayMode],
          dateIntervals: [DateInterval],
          timeIntervalFormatter: TimeIntervalFormatting,
          dataSource: ChartDataSource)
     {
+        precondition(!displayModes.isEmpty, "Chart display modes array must be not empty")
+        precondition(!dateIntervals.isEmpty, "Chart date intervals array must be not empty")
         self.displayModes = displayModes
         self.dateIntervals = dateIntervals
         self.timeIntervalFormatter = timeIntervalFormatter
         self.dataSource = dataSource
+        currentDisplayMode = displayModes.first!
+        currentDateInterval = dateIntervals.first!
+    }
+
+    func fetchData() {
+        chart?.showSpinner()
+        dataSource.fetchData(for: currentChartConfig) { [weak self] (result) in
+            guard let this = self else { return }
+
+            this.chart?.hideSpinner()
+
+            switch result {
+            case let .success(entries):
+                this.chart?.render(
+                    entries: entries,
+                    displayMode: this.currentDisplayMode
+                )
+            case let .failure(error):
+                this.chart?.render(error: error)
+            }
+        }
     }
 }
 
@@ -41,24 +82,18 @@ private extension ChartViewModel {
     func setup(chart: ChartDisplaying) {
         chart.onSelectTab = { [weak self] (tab) in
             guard let this = self else { return }
-            this.fetchData(dateInterval: this.dateIntervals[tab])
+            this.currentDateInterval = this.dateIntervals[tab]
+        }
+        chart.onChangeDisplayMode = { [weak self] in
+            guard let this = self else { return }
+            this.onChangeDisplayMode?()
         }
     }
 
-    func fetchData(dateInterval: DateInterval) {
-        let config = ChartConfig(displayMode: .price, dateInterval: dateInterval)
-        chart?.showSpinner()
-        dataSource.fetchData(for: config) { [weak self] (result) in
-            guard let this = self else { return }
-
-            this.chart?.hideSpinner()
-
-            switch result {
-            case let .success(entries):
-                this.chart?.render(entries: entries)
-            case let .failure(error):
-                this.chart?.render(error: error)
-            }
-        }
+    var currentChartConfig: ChartConfig {
+        return ChartConfig(
+            displayMode: currentDisplayMode,
+            dateInterval: currentDateInterval
+        )
     }
 }

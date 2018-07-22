@@ -21,7 +21,7 @@ final class BondRateAPIStub: BondRateAPI {
         workingQueue.async {
             let rates = stride(
                 from: interval.start.timeIntervalSince1970,
-                to: interval.end.timeIntervalSince1970,
+                to: interval.end.timeIntervalSince1970 + 1,
                 by: .day
             )
                 .map { BondRate.stub(date: Date(timeIntervalSince1970: $0)) }

@@ -43,6 +43,7 @@ private extension ChartView {
         lineChartView.rightAxis.enabled = false
         lineChartView.legend.enabled = false
         lineChartView.chartDescription?.enabled = false
+        lineChartView.minOffset = 0
         setup(chartDateAxis: lineChartView.xAxis)
         setup(chartValueAxis: lineChartView.leftAxis)
     }
@@ -52,6 +53,7 @@ private extension ChartView {
         axis.labelFont = .chartLabelFont
         axis.labelTextColor = .black
         axis.valueFormatter = DateValueFormatter()
+        axis.granularity = 3600
     }
 
     func setup(chartValueAxis axis: YAxis) {
@@ -110,12 +112,21 @@ extension ChartView: ChartDisplaying {
     }
 
     func render(entries: [DataEntry], displayMode: BondRateDisplayMode) {
+        updateDateAxisMinMax(from: entries)
         let dataSet = LineChartDataSet.bondDataSet(entries: entries)
         lineChartView.data = LineChartData(dataSet: dataSet)
         displayModeButton.setTitle(
             displayMode.description,
             for: .normal
         )
+    }
+
+    private func updateDateAxisMinMax(from entries: [DataEntry]) {
+        guard !entries.isEmpty else {
+            return
+        }
+        lineChartView.xAxis.axisMinimum = entries.first!.x - .day
+        lineChartView.xAxis.axisMaximum = entries.last!.x + .day
     }
 
     var onSelectTab: ((Int) -> Void)? {

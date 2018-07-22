@@ -25,7 +25,7 @@ extension DateInterval {
 
 private extension DateInterval {
     static func interval(component: DateComponentType, offset: Int) -> DateInterval {
-        let now = Date()
+        let now = NSCalendar.current.startOfDay(for: Date()) 
         return DateInterval(
             start: now.adjust(component, offset: offset),
             end: now

@@ -26,7 +26,7 @@
 		D863680520D6B9AF00787120 /* BondRateDisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D863680420D6B9AF00787120 /* BondRateDisplayMode.swift */; };
 		D863680720D6BB0400787120 /* ChartDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D863680620D6BB0400787120 /* ChartDisplaying.swift */; };
 		D86C06E520CE598D00EA0CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06E420CE598D00EA0CAB /* AppDelegate.swift */; };
-		D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06E620CE598D00EA0CAB /* ViewController.swift */; };
+		D86C06E720CE598D00EA0CAB /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C06E620CE598D00EA0CAB /* ChartViewController.swift */; };
 		D86C06EA20CE598D00EA0CAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86C06E820CE598D00EA0CAB /* Main.storyboard */; };
 		D86C06EC20CE598D00EA0CAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86C06EB20CE598D00EA0CAB /* Assets.xcassets */; };
 		D86C06EF20CE598D00EA0CAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86C06ED20CE598D00EA0CAB /* LaunchScreen.storyboard */; };
@@ -74,7 +74,7 @@
 		D863680620D6BB0400787120 /* ChartDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDisplaying.swift; sourceTree = "<group>"; };
 		D86C06E120CE598D00EA0CAB /* BondChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BondChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86C06E420CE598D00EA0CAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D86C06E620CE598D00EA0CAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D86C06E620CE598D00EA0CAB /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		D86C06E920CE598D00EA0CAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D86C06EB20CE598D00EA0CAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D86C06EE20CE598D00EA0CAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 		D86C070C20CE5D6800EA0CAB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D86C06E620CE598D00EA0CAB /* ViewController.swift */,
+				D86C06E620CE598D00EA0CAB /* ChartViewController.swift */,
 				D86C06E820CE598D00EA0CAB /* Main.storyboard */,
 				D86C06ED20CE598D00EA0CAB /* LaunchScreen.storyboard */,
 			);
@@ -645,7 +645,7 @@
 				D86367FC20D6ADD900787120 /* ChartDataEntryBuilderFactory.swift in Sources */,
 				D863680220D6B77900787120 /* ChartViewModel.swift in Sources */,
 				D86367F120D6A3E200787120 /* ChartDataSource.swift in Sources */,
-				D86C06E720CE598D00EA0CAB /* ViewController.swift in Sources */,
+				D86C06E720CE598D00EA0CAB /* ChartViewController.swift in Sources */,
 				D80A282320CEA50500F178DA /* ChartTabBar.swift in Sources */,
 				D80A282B20CEB18A00F178DA /* DateInterval+Extensions.swift in Sources */,
 				D8DDD7F420CFCE100070E769 /* TimeIntervalFormatter.swift in Sources */,

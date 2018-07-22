@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ChartViewController: UIViewController {
     private var chartViewModel: ChartViewModel!
 
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
 }
 
-private extension ViewController {
+private extension ChartViewController {
     func showActionSheet(for displayModes: [BondRateDisplayMode]) {
         let sheet = UIAlertController(
             title: nil,

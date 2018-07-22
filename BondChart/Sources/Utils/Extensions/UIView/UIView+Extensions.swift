@@ -15,15 +15,12 @@ extension UIView {
         return objs.first as? T
     }
 
-    func fillParent() {
-        guard let parent = superview else {
-            return
-        }
-
+    func fill(container: UIView) {
+        container.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
-        leadingAnchor.constraint(equalTo: parent.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: parent.trailingAnchor).isActive = true
-        topAnchor.constraint(equalTo: parent.topAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: parent.bottomAnchor).isActive = true
+        leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
+        topAnchor.constraint(equalTo: container.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: container.bottomAnchor).isActive = true
     }
 }

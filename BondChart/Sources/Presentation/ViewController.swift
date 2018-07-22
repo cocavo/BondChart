@@ -34,7 +34,6 @@ class ViewController: UIViewController {
             dataSource: dataSource
         )
         chart.viewModel = vm
-        view.addSubview(chart)
-        chart.fillParent()
+        chart.fill(container: view)
     }
 }
